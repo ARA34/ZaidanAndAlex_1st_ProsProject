@@ -57,7 +57,7 @@ void myFunction() {
 }
 
 void operatorControl() {
-  int pot = 0;
+  int pot = 1;
   int power, turn;
   while(1) {
   		power = joystickGetAnalog(1,1); //vertical axis on right joystick
