@@ -43,7 +43,15 @@ void initialize() {
   encoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, false);
 }
 
-void myFunction() {
+/*void switchFunction () {
+  //do work..
+  if (digitalRead(LIMIT_SWITCH)==LOW) {
+    return "LOW";
+  }
+  //..
+}
+
+void encoderFuncton() {
   //dowork
   int counts = encoderGet(encoder);
 
@@ -54,7 +62,8 @@ void myFunction() {
   encoderReset(encoder);
   //encoderReset(encoder);
   //..
-}
+}*/
+
 
 void operatorControl() {
   int pot = 0;
