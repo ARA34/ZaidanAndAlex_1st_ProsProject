@@ -43,10 +43,10 @@ void initialize() {
   encoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, false);
 }
 
-/*void switchFunction () {
+void switchFunction () {
   //do work..
   if (digitalRead(LIMIT_SWITCH)==LOW) {
-    return "LOW";
+    //..
   }
   //..
 }
@@ -62,7 +62,7 @@ void encoderFuncton() {
   encoderReset(encoder);
   //encoderReset(encoder);
   //..
-}*/
+}
 
 
 void operatorControl() {

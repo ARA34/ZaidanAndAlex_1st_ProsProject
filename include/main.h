@@ -19,7 +19,6 @@
  * PROS contains FreeRTOS (http://www.freertos.org) whose source code may be
  * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
  */
-
 #ifndef MAIN_H_
 
 // This prevents multiple inclusion, which isn't bad for this file but is good practice
@@ -37,6 +36,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+//#include "chassis.h"
 
 // A function prototype looks exactly like its declaration, but with a semicolon instead of
 // actual code. If a function does not match a prototype, compile errors will occur.
