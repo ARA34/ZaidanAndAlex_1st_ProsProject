@@ -10,7 +10,13 @@
 #include "main.h"
 #include "chassis.h"
 #include "claw.h"
-//hello this is just a comment...
+//hello this is just a comment... / notes for me
+
+/*-------------------------------PORTS------------------------------------------
+
+SHOULDER = 4
+
+*/
 
 
 /*
@@ -84,7 +90,7 @@ void operatorControl() {
       else if (joystickGetAnalog(1,6), JOY_DOWN) {
         liftSet(-1);
       }
-      else {
+      else {//if not moving then dont move
         liftSet(0);
       }
 
