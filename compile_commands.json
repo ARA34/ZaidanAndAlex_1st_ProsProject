@@ -179,7 +179,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpz0pevs2d/init.c.o",
+            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp5nkkfzju/init.c.o",
             "src\\init.c"
         ],
         "directory": "C:\\Users\\period 6\\MyActualFirstProject",
@@ -210,7 +210,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpz0pevs2d/auto.c.o",
+            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp5nkkfzju/auto.c.o",
             "src\\auto.c"
         ],
         "directory": "C:\\Users\\period 6\\MyActualFirstProject",
@@ -241,7 +241,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpz0pevs2d/chassis.c.o",
+            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp5nkkfzju/chassis.c.o",
             "src\\chassis.c"
         ],
         "directory": "C:\\Users\\period 6\\MyActualFirstProject",
@@ -272,7 +272,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpz0pevs2d/claw.c.o",
+            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp5nkkfzju/claw.c.o",
             "src\\claw.c"
         ],
         "directory": "C:\\Users\\period 6\\MyActualFirstProject",
@@ -303,7 +303,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpz0pevs2d/opcontrol.c.o",
+            "bin/opcontrol.c.o",
             "src\\opcontrol.c"
         ],
         "directory": "C:\\Users\\period 6\\MyActualFirstProject",

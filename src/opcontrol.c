@@ -77,18 +77,18 @@ void operatorControl() {
   while(1) {
   		power = joystickGetAnalog(1,1); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
-      pot = analogRead(5);
-      printf("the pot value %d \n", pot);
+
+      //printf("the pot value %d \n", pot);
       chassisSet(power - turn, power + turn);
   		//motorSet(1, power - turn);// right wheels
   		//motorSet(10,power + turn); // left wheels
       clawSet(joystickGetAnalog(1, 4));
 
       if (joystickGetAnalog(1,6), JOY_UP) {
-        liftSet(1);
+        liftSet(127);
       }
       else if (joystickGetAnalog(1,6), JOY_DOWN) {
-        liftSet(-1);
+        liftSet(-127);
       }
       else {//if not moving then dont move
         liftSet(0);
