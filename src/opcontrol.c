@@ -72,10 +72,9 @@ void encoderFuncton() {
 
 
 void operatorControl() {
-  int pot = 0;
   int power, turn;
   while(1) {
-  		power = joystickGetAnalog(1,1); //vertical axis on right joystick
+  		power = joystickGetAnalog(1,0); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
 
       //printf("the pot value %d \n", pot);

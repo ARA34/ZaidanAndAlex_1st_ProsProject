@@ -2,5 +2,5 @@
 #include "claw.h"
 
 void clawSet(int speed) {
-  motorSet(9, -speed);//wrong port
+  motorSet(5, -speed);//wrong port changed from 9 to 5
 }
