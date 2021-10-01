@@ -7,6 +7,7 @@ void chassisSet(int left, int right) {
   motorSet(10, left);
 }
 
+//for the arm
 void liftSet(int speed) {
   motorSet(4,speed);
 }
