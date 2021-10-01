@@ -24,10 +24,10 @@
 // This prevents multiple inclusion, which isn't bad for this file but is good practice
 #define MAIN_H_
 //digital port number limit switched is plugged into
-#define LIMIT_SWITCH 1
+#define LIMIT_SWITCH 4
 
-#define QUAD_TOP_PORT 4 //port number
-#define QUAD_BOTTOM_PORT 5 //port number
+#define QUAD_TOP_PORT 8 //port number
+#define QUAD_BOTTOM_PORT 9 //port number
 
 #include <API.h>
 //#include "chassis.h"

@@ -11,7 +11,18 @@ void homeShoulder(int homePosition) {
   printf("homing started, stand by \n");
 
 // start a while loop with the condition limitSwitch == 1
-while(LIMIT_SWITCH == 1) {
+if (LIMIT_SWITCH == 1) {
+  liftSet(-1);
+} else {
+  liftSet(0);//change back to while loop
+}
+
+if(encoderGet(sEncoder) < homePosition) {
+  liftSet(1);
+} else {
+  liftSet(0);
+}
+/*while(LIMIT_SWITCH == 1) {
   liftSet(-1);
 }
 liftSet(0);
@@ -19,7 +30,7 @@ liftSet(0);
 while(encoderGet(sEncoder) < homePosition) {
   liftSet(1);
 }
-liftSet(0);
+liftSet(0);*/
 //turn on shoulder in neg direction
 
 //wait unitll limitSwitch == 1 is no longer true
