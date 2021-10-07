@@ -8,8 +8,9 @@
  */
 
 #include "main.h"
-#include "chassis.h"
 #include "claw.h"
+#include "homeshoulder.h"
+#include "chassis.h"
 //hello this is just a comment... / notes for me
 
 /*-------------------------------PORTS------------------------------------------
@@ -37,40 +38,6 @@ SHOULDER = 4
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 
- int joystickGetAnalog( unsigned char joystick, // the joystick slot to check(1 f/or master, 2 for partner)
-	 											unsigned char axis // one of the joystick channels on a VEX jotstick: 1, 2, 3, 4, ACCEL_X, ACCEL_Y
- );
-
- void motorSet (unsigned char channel,  // motor channel to set from 1-10
- 								int speed // new signed speed -127 is full reverse, 127 is full forward, 0 off
-							);
-Encoder encoder;
-void initialize() {
-  encoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, false);
-}
-
-void switchFunction () {
-  //do work..
-  if (digitalRead(LIMIT_SWITCH)==LOW) {
-    //..
-  }
-  //..
-}
-
-void encoderFuncton() {
-  //dowork
-  int counts = encoderGet(encoder);
-
-    //digitalRead() will return low if pressed and high if released
-  if (digitalRead(LIMIT_SWITCH)==LOW) {
-    //..
-  }
-  encoderReset(encoder);
-  //encoderReset(encoder);
-  //..
-}
-
-
 void operatorControl() {
   int power, turn;
   while(1) {
@@ -91,6 +58,9 @@ void operatorControl() {
       }
       else {//if not moving then dont move
         liftSet(0);
+      }
+      if (joystickGetDigital(1, 8,JOY_UP)) {
+        homeShoulder(50);
       }
 
   		delay(200);

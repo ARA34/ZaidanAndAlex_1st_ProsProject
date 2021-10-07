@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.h"    // includes API.h and other headers
 #include "claw.h"
 
 void clawSet(int speed) {
