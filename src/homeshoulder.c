@@ -1,13 +1,13 @@
 #include "main.h"
 #include "homeshoulder.h"
-#include "chassis.h" 
+#include "chassis.h"
 
 
 
 void homeShoulder(int homePosition) {
   Encoder sEncoder;
 
-  sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, false);
+  sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true                                                                                                                                                    );
 
   int eValue = encoderGet(sEncoder);
   printf("homing started, stand by \n");
@@ -35,7 +35,7 @@ eValue=encoderGet(sEncoder);
 while(eValue < homePosition) {
   liftSet(50);
   printf("moving to home pos %d \n",eValue );
-  if (eValue > homePosition) {
+  if (eValue < homePosition) {
     liftSet(0);
   }
   eValue=encoderGet(sEncoder);

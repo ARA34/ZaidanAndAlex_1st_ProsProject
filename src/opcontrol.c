@@ -40,26 +40,32 @@ SHOULDER = 4
 
 void operatorControl() {
   int power, turn;
+  printf("before the while loop in opcontrol \n");
   while(1) {
+    printf("hello \n");
   		power = joystickGetAnalog(1,0); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
 
       //printf("the pot value %d \n", pot);
-      chassisSet(power - turn, power + turn);
+      //chassisSet(power - turn, power + turn);
   		//motorSet(1, power - turn);// right wheels
   		//motorSet(10,power + turn); // left wheels
-      clawSet(joystickGetAnalog(1, 4));
+      //clawSet(joystickGetAnalog(1, 4));
 
-      if (joystickGetAnalog(1,6), JOY_UP) {
+      if (joystickGetDigital(1,6, JOY_UP)) {
         liftSet(127);
+        printf("1 \n");
       }
-      else if (joystickGetAnalog(1,6), JOY_DOWN) {
+      else if (joystickGetDigital(1,6, JOY_DOWN)) {
         liftSet(-127);
+        printf("2 \n");
       }
       else {//if not moving then dont move
         liftSet(0);
+        printf("3 \n");
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
+        printf("Calling homeshoulder \n");
         homeShoulder(50);
       }
 

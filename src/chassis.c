@@ -7,5 +7,5 @@ void chassisSet(int left, int right) {
 }
 
 void liftSet(int speed) {
-  motorSet(4, speed);
+  motorSet(4, -speed);
 }
