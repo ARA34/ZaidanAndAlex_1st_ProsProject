@@ -38,11 +38,26 @@ SHOULDER = 4
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 
+ void holdShoulderAt(int td) { //target degree
+   int kp = 1;
+   int maxd = 127;
+   Encoder shoulderEncoder;
+   shoulderEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
+     int error = td - encoderGet(shoulderEncoder);
+     int output = kp * error;
+     if(abs(error)  < maxd) {
+       liftSet(output);
+     } else {
+       liftSet(output/ abs(output)*maxd);
+     }
+   }
+
 void operatorControl() {
   int power, turn;
   printf("before the while loop in opcontrol \n");
   while(1) {
-    printf("hello \n");
+    printf("hello main loop print \n");
+    holdShoulderAt(50);
   		power = joystickGetAnalog(1,0); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
 
@@ -54,19 +69,23 @@ void operatorControl() {
 
       if (joystickGetDigital(1,6, JOY_UP)) {
         liftSet(127);
-        printf("1 \n");
+        //printf("1 \n");
       }
       else if (joystickGetDigital(1,6, JOY_DOWN)) {
         liftSet(-127);
-        printf("2 \n");
+        //printf("2 \n");
       }
       else {//if not moving then dont move
         liftSet(0);
-        printf("3 \n");
+        //printf("3 \n");
+      }
+      if(joystickGetDigital(1,8, JOY_RIGHT )) {
+        printf("calling holdShoulderAt \n");
+        holdShoulderAt(50);
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
-        printf("Calling homeshoulder \n");
-        homeShoulder(50);
+        printf("Calling homeshoulder its commented out rn tho \n");
+      //commenting out for now  homeShoulder(50);
       }
 
   		delay(200);

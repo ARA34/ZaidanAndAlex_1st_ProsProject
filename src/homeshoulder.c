@@ -7,7 +7,7 @@
 void homeShoulder(int homePosition) {
   Encoder sEncoder;
 
-  sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true                                                                                                                                                    );
+  sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
 
   int eValue = encoderGet(sEncoder);
   printf("homing started, stand by \n");
