@@ -54,10 +54,14 @@ SHOULDER = 4
 
 void operatorControl() {
   int power, turn;
-  printf("before the while loop in opcontrol \n");
+  Encoder sEncoder;
+  sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
+//joystickGetAnalog(unsigned char joystick, unsigned char axis)
+  //printf("before the while loop in opcontrol \n");
   while(1) {
-    printf("hello main loop print \n");
-    holdShoulderAt(50);
+    printf("Encoder value is at: %d \n", encoderGet(sEncoder));
+  //  printf("hello main loop print \n");
+    //holdShoulderAt(50);
   		power = joystickGetAnalog(1,0); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
 
@@ -66,6 +70,9 @@ void operatorControl() {
   		//motorSet(1, power - turn);// right wheels
   		//motorSet(10,power + turn); // left wheels
       //clawSet(joystickGetAnalog(1, 4));
+
+
+
 
       if (joystickGetDigital(1,6, JOY_UP)) {
         liftSet(127);
@@ -81,10 +88,10 @@ void operatorControl() {
       }
       if(joystickGetDigital(1,8, JOY_RIGHT )) {
         printf("calling holdShoulderAt \n");
-        holdShoulderAt(50);
+        holdShoulderAt(100);
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
-        printf("Calling homeshoulder its commented out rn tho \n");
+        //printf("Calling homeshoulder its commented out rn tho \n");
       //commenting out for now  homeShoulder(50);
       }
 
