@@ -2,5 +2,5 @@
 #define PROJECT6_H
 
 #include "main.h"
-void project6(int inches);
+void project6();
 #endif

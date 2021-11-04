@@ -10,6 +10,7 @@
 #include "main.h"
 #include "claw.h"
 #include "homeshoulder.h"
+#include "project6.h"
 #include "chassis.h"
 //hello this is just a comment... / notes for me
 
@@ -62,9 +63,9 @@ void operatorControl() {
     printf("Encoder value is at: %d \n", encoderGet(sEncoder));
   //  printf("hello main loop print \n");
     //holdShoulderAt(50);
-  		power = joystickGetAnalog(1,0); //vertical axis on right joystick
+  		power = joystickGetAnalog(1,1); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
-
+      chassisSet(power - turn, power + turn);
       //printf("the pot value %d \n", pot);
       //chassisSet(power - turn, power + turn);
   		//motorSet(1, power - turn);// right wheels
@@ -87,8 +88,9 @@ void operatorControl() {
         //printf("3 \n");
       }
       if(joystickGetDigital(1,8, JOY_RIGHT )) {
-        printf("calling holdShoulderAt \n");
-        holdShoulderAt(100);
+        //printf("calling holdShoulderAt \n");
+        //holdShoulderAt(100
+        project6();
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
         //printf("Calling homeshoulder its commented out rn tho \n");
