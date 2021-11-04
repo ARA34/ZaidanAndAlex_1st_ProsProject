@@ -10,7 +10,7 @@
 #include "main.h"
 #include "claw.h"
 #include "homeshoulder.h"
-#include "project6.h"
+//#include "project6.h"
 #include "chassis.h"
 //hello this is just a comment... / notes for me
 
@@ -88,9 +88,9 @@ void operatorControl() {
         //printf("3 \n");
       }
       if(joystickGetDigital(1,8, JOY_RIGHT )) {
-        //printf("calling holdShoulderAt \n");
-        //holdShoulderAt(100
-        project6();
+        printf("calling holdShoulderAt \n");
+        holdShoulderAt(100);
+        //project6();
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
         //printf("Calling homeshoulder its commented out rn tho \n");
