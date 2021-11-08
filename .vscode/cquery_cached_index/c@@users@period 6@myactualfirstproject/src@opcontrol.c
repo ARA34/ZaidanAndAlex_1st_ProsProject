@@ -126,13 +126,13 @@ void operatorControl() {
         //project6();
       }
       while(joystickGetDigital(1, 8, JOY_UP)) {
-        printf("Encoder value is at: %d \n", encoderGet(sEncoder));
+        //printf("Encoder value is at: %d \n", encoderGet(sEncoder));
       }
       if(joystickGetDigital(1,8,JOY_LEFT)) {
-        printf("test \n");
+        //printf("test \n");
       }
       if (joystickGetDigital(1,8, JOY_DOWN)) {
-        boolean = 0;
+        //boolean = 0;
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
         //printf("Encoder value is at: %d \n", encoderGet(sEncoder));
