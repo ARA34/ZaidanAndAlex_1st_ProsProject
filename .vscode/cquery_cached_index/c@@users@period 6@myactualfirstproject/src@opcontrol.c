@@ -38,24 +38,25 @@ SHOULDER = 4
  *
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
- int boolean = 1;
+ //int boolean = 1;
 
- void holdShoulderAt(int td) { //target degree
+ void holdShoulderAt(int targetPos) { //target degree
    Encoder shoulderEncoder;
    shoulderEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, false);
 
-   int kp = 1;
+   int Kp = 2;
    int maxp = 127;
    int error;
    int output;
 
-   while(boolean == 1) {
-     error = td - encoderGet(shoulderEncoder);
-     output = kp * error;
+   while(true) {
+     error = targetPos - encoderGet(shoulderEncoder);
+     output = Kp * error;
      if(abs(error) < maxp) {
        liftSet(output);
      }else {
-       liftSet(output / abs(output) * maxp);
+       liftSet(output / (abs(output) * maxp));
+       encoderReset(shoulderEncoder);
      }
    }
    }
