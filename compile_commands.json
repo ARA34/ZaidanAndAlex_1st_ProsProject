@@ -24,72 +24,10 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpmxt2pqbt/chassis.c.o",
-            "src\\chassis.c"
-        ],
-        "directory": "C:\\Users\\period 6\\github\\ZaidanAndAlex1stProject",
-        "file": "src\\chassis.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-fno-ms-extensions",
-            "-fno-ms-compatibility",
-            "-fno-delayed-template-parsing",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include-fixed",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpmxt2pqbt/opcontrol.c.o",
-            "src\\opcontrol.c"
-        ],
-        "directory": "C:\\Users\\period 6\\github\\ZaidanAndAlex1stProject",
-        "file": "src\\opcontrol.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-fno-ms-extensions",
-            "-fno-ms-compatibility",
-            "-fno-delayed-template-parsing",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include-fixed",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpmxt2pqbt/auto.c.o",
+            "C:/Users/P6ROBO~1/AppData/Local/Temp/tmp0p6yl5ik/auto.c.o",
             "src\\auto.c"
         ],
-        "directory": "C:\\Users\\period 6\\github\\ZaidanAndAlex1stProject",
+        "directory": "C:\\Users\\P6 Robotics\\Desktop\\SuperClawbot1",
         "file": "src\\auto.c"
     },
     {
@@ -117,10 +55,10 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpmxt2pqbt/claw.c.o",
+            "bin/claw.c.o",
             "src\\claw.c"
         ],
-        "directory": "C:\\Users\\period 6\\github\\ZaidanAndAlex1stProject",
+        "directory": "C:\\Users\\P6 Robotics\\Desktop\\SuperClawbot1",
         "file": "src\\claw.c"
     },
     {
@@ -148,10 +86,10 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmpmxt2pqbt/init.c.o",
+            "bin/init.c.o",
             "src\\init.c"
         ],
-        "directory": "C:\\Users\\period 6\\github\\ZaidanAndAlex1stProject",
+        "directory": "C:\\Users\\P6 Robotics\\Desktop\\SuperClawbot1",
         "file": "src\\init.c"
     },
     {
@@ -179,10 +117,10 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp6t5__epy/homeshoulder.c.o",
+            "bin/homeshoulder.c.o",
             "src\\homeshoulder.c"
         ],
-        "directory": "C:\\Users\\period 6\\MyActualFirstProject",
+        "directory": "C:\\Users\\P6 Robotics\\Desktop\\SuperClawbot1",
         "file": "src\\homeshoulder.c"
     },
     {
@@ -210,104 +148,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp6t5__epy/claw.c.o",
-            "src\\claw.c"
-        ],
-        "directory": "C:\\Users\\period 6\\MyActualFirstProject",
-        "file": "src\\claw.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-fno-ms-extensions",
-            "-fno-ms-compatibility",
-            "-fno-delayed-template-parsing",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include-fixed",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp6t5__epy/chassis.c.o",
+            "bin/chassis.c.o",
             "src\\chassis.c"
         ],
-        "directory": "C:\\Users\\period 6\\MyActualFirstProject",
+        "directory": "C:\\Users\\P6 Robotics\\Desktop\\SuperClawbot1",
         "file": "src\\chassis.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-fno-ms-extensions",
-            "-fno-ms-compatibility",
-            "-fno-delayed-template-parsing",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include-fixed",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp6t5__epy/init.c.o",
-            "src\\init.c"
-        ],
-        "directory": "C:\\Users\\period 6\\MyActualFirstProject",
-        "file": "src\\init.c"
-    },
-    {
-        "arguments": [
-            "clang++",
-            "-c",
-            "-target",
-            "armv7ar-none-none-eabi",
-            "-fno-ms-extensions",
-            "-fno-ms-compatibility",
-            "-fno-delayed-template-parsing",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/include-fixed",
-            "-isystemc:\\program files\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/include",
-            "-isystem./include",
-            "-iquote./include/./",
-            "-mthumb",
-            "-mcpu=cortex-m3",
-            "-mlittle-endian",
-            "-Os",
-            "-ffunction-sections",
-            "-fsigned-char",
-            "-fomit-frame-pointer",
-            "-fsingle-precision-constant",
-            "-fdiagnostics-color",
-            "-std=gnu99",
-            "-o",
-            "C:/Users/PERIOD~1/AppData/Local/Temp/tmp6t5__epy/auto.c.o",
-            "src\\auto.c"
-        ],
-        "directory": "C:\\Users\\period 6\\MyActualFirstProject",
-        "file": "src\\auto.c"
     },
     {
         "arguments": [
@@ -337,7 +182,7 @@
             "bin/opcontrol.c.o",
             "src\\opcontrol.c"
         ],
-        "directory": "C:\\Users\\period 6\\MyActualFirstProject",
+        "directory": "C:\\Users\\P6 Robotics\\Desktop\\SuperClawbot1",
         "file": "src\\opcontrol.c"
     }
 ]
