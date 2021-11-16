@@ -29,6 +29,9 @@
 #define QUAD_TOP_PORT 8 //port number
 #define QUAD_BOTTOM_PORT 9 //port number
 
+#define FORE_TOP_PORT 10
+#define FORE_BOTTOM_PORT 7
+
 #include <API.h>
 
 //#include "chassis.h"

@@ -79,19 +79,22 @@ SHOULDER = 4
      }
    }
 
-   void project6(int repetitions) {
+   void project6(int repetitions, Encoder shoulder_encoder, Encoder elbow_encoder) {
      printf("project6 starting");
      for(int count = 0; count > repetitions; count ++) {
        printf("Count:  %d \n", count);
-       liftSet(count);
-       elbowSet(count);
+
+       liftSet(encoderGet(shoulder_encoder) + count);
+       elbowSet(encoderGet(elbow_encoder) + count);
      }
    }
 
 void operatorControl() {
   int power, turn;
   Encoder sEncoder;
+  Encoder eEncoder;
   sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
+  eEncoder = encoderInit(FORE_TOP_PORT, FORE_BOTTOM_PORT, true);
 //joystickGetAnalog(unsigned char joystick, unsigned char axis)
   //printf("before the while loop in opcontrol \n");
   while(1) {
@@ -124,8 +127,10 @@ void operatorControl() {
         //printf("3 \n");
       }
       if(joystickGetDigital(1,8, JOY_RIGHT )) {
-        printf("calling holdShoulderAt \n");
-        holdShoulderAt(50, sEncoder);
+        //printf("calling holdShoulderAt \n");
+        //holdShoulderAt(50, sEncoder);
+        printf("Calling homeshoulder \n");
+        homeShoulder(50);
         //project6();
       }
       while(joystickGetDigital(1, 8, JOY_UP)) {
@@ -138,11 +143,11 @@ void operatorControl() {
         //boolean = 0;
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
-        project6(5);
+        project6(5, sEncoder, eEncoder);
       }
 
       if(joystickGetDigital(1,7, JOY_UP)) {
-        randomFunction();
+        printf("Shoulder Encoder is at: %d \n", encoderGet(sEncoder));
       }
         //printf("Encoder value is at: %d \n", encoderGet(sEncoder));
         //printf("Calling homeshoulder its commented out rn tho \n");

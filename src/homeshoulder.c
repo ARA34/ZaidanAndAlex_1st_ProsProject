@@ -11,19 +11,6 @@ void homeShoulder(int homePosition) {
 
   int eValue = encoderGet(sEncoder);
   printf("homing started, stand by \n");
-
-// start a while loop with the condition limitSwitch == 1
-/*if (LIMIT_SWITCH == 1) {
-  liftSet(-1);
-} else {
-  liftSet(0);//change back to while loop
-}
-
-if(encoderGet(sEncoder) < homePosition) {
-  liftSet(1);
-} else {
-  liftSet(0);
-}*/
 while(digitalRead(LIMIT_SWITCH) == 1)  {
   printf("looking for limit switch\n");
   liftSet(-50);
@@ -41,21 +28,6 @@ while(eValue < homePosition) {
   eValue=encoderGet(sEncoder);
 }
 
-/*while(1) {
-  liftSet(-1);
-  if (LIMIT_SWITCH != 1) {
-    liftSet(0);
-    encoderReset(sEncoder);
-  }
-  if (encoderGet(sEncoder < homePosition)) {
-    liftSet(1);
-  }
-}
-liftSet(0);
-//
-liftSet(-1);
-while (LIMIT_SWITCH != 1) {
-  liftSet(0);*/
 
 //turn on shoulder in neg direction
 
@@ -68,5 +40,5 @@ while (LIMIT_SWITCH != 1) {
 //stop sholderMotor (the shoulder joint is now "homed") }
 
 
-  printf("homing of shoulder complete \n");
+  printf("homing of shoulder complete, encoder should be 0 \n");
 }
