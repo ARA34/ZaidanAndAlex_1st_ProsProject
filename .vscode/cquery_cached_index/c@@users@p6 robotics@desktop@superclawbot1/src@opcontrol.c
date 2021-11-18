@@ -11,7 +11,7 @@
 #include "claw.h"
 #include "homeshoulder.h"
 //#include "project6.h"
-#include "chassis.h"
+//#include "chassis.h"
 /*hello this is just a comment... / notes for me
 Language: C
 Functions:
@@ -55,7 +55,6 @@ SHOULDER = 4
  void holdShoulderAt(int targetPos, Encoder shoulderEncoder) { //target degree
    //Encoder shoulderEncoder;
    //shoulderEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, false);
-
    int Kp = 2;
    int maxp = 127;
    int error;
@@ -71,13 +70,48 @@ SHOULDER = 4
        encoderReset(shoulderEncoder);
      }
    }
-   }
+ }
+/*void liftSetV2(Encoder sEncoder2) {
+  int Kp = 2;
+  int maxp = 127;
+  int error;
+  int output;
 
+  while(joystickGetDigital(1,6,JOY_UP)) {
+    error = targetPos - encoderGet(sEncoder2);
+    output = Kp * error;
+    if(abs(error) < maxp) {
+      liftSet(output);
+    }else {
+      liftSet(output / (abs(output) * maxp));
+      encoderReset(sEncoder2);
+    }
+  }
+}*/
    void randomFunction() {
      for(int i = 0; i > 10; i ++) {
        printf("%d \n", i);
      }
    }
+   void lineFollowSet() {
+
+     //read the right, left, and center line following sensors
+     //print the values of right left and center
+    //if c > R & c > L then
+    // drive forwards
+    /*
+    if(c > L && c > R) {
+    drive forwards
+  } else if(r > c && R > l) {
+   turn right
+} else if (l > r && L > c) {
+drive left
+} else {
+drive back
+}
+    */
+  }
+
 
    void project6(int repetitions, Encoder shoulder_encoder, Encoder elbow_encoder) {
      printf("project6 starting");
@@ -91,6 +125,7 @@ SHOULDER = 4
 
 void operatorControl() {
   int power, turn;
+  int the_R, the_L, the_C;
   Encoder sEncoder;
   Encoder eEncoder;
   sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
@@ -126,15 +161,20 @@ void operatorControl() {
         liftSet(0);
         //printf("3 \n");
       }
+
+      if(joystickGetDigital(1,5, JOY_UP)) {
+        elbowSet(127);
+      } else if(joystickGetDigital(1,5, JOY_DOWN)) {
+        elbowSet(-127);
+      } else {
+        elbowSet(0);
+      }
       if(joystickGetDigital(1,8, JOY_RIGHT )) {
         //printf("calling holdShoulderAt \n");
         //holdShoulderAt(50, sEncoder);
         printf("Calling homeshoulder \n");
-        homeShoulder(50);
+        homeShoulder(50, sEncoder);
         //project6();
-      }
-      while(joystickGetDigital(1, 8, JOY_UP)) {
-        //printf("Encoder value is at: %d \n", encoderGet(sEncoder));
       }
       if(joystickGetDigital(1,8,JOY_LEFT)) {
         //printf("test \n");
@@ -147,13 +187,24 @@ void operatorControl() {
       }
 
       if(joystickGetDigital(1,7, JOY_UP)) {
-        printf("Shoulder Encoder is at: %d \n", encoderGet(sEncoder));
+        printf("Shoulder Encoder: %d \n", encoderGet(sEncoder));
+      }
+      if(joystickGetDigital(1,7, JOY_DOWN)) {
+        printf("Elbow encoder : %d \n", encoderGet(eEncoder));
+      }
+      if(joystickGetDigital(1,7,JOY_LEFT)) {
+        lineFollowSet(the_R, the_L, the_C);
+
       }
         //printf("Encoder value is at: %d \n", encoderGet(sEncoder));
         //printf("Calling homeshoulder its commented out rn tho \n");
       //commenting out for now  homeShoulder(50);
 
+      while(analogReadCalibrated(LINE_TRACKER_PORT) < 2000) {
+        motorSet(DRIVE_MOTOR_LEFT, 127);
+        motorSet(DRIVE_MOTOR_RIGHT, 127);
 
+      }
 
   		delay(200);
 

@@ -4,28 +4,25 @@
 
 
 
-void homeShoulder(int homePosition) {
-  Encoder sEncoder;
+void homeShoulder(int homePosition, Encoder the_encoder) {
 
-  sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
-
-  int eValue = encoderGet(sEncoder);
-  printf("homing started, stand by \n");
+  int eValue = encoderGet(the_encoder);
+  //printf("homing started, stand by \n");
 while(digitalRead(LIMIT_SWITCH) == 1)  {
-  printf("looking for limit switch\n");
+  //printf("looking for limit switch\n");
   liftSet(-50);
 }
 liftSet(0);
-encoderReset(sEncoder);
-eValue=encoderGet(sEncoder);
+encoderReset(the_encoder);
+eValue=encoderGet(the_encoder);
 
 while(eValue < homePosition) {
   liftSet(50);
-  printf("moving to home pos %d \n",eValue );
+  //printf("moving to home pos %d \n",eValue );
   if (eValue < homePosition) {
     liftSet(0);
   }
-  eValue=encoderGet(sEncoder);
+  eValue=encoderGet(the_encoder);
 }
 
 

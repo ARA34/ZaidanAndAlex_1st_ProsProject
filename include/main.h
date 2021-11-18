@@ -29,10 +29,16 @@
 #define QUAD_TOP_PORT 8 //port number
 #define QUAD_BOTTOM_PORT 9 //port number
 
-#define FORE_TOP_PORT 10
-#define FORE_BOTTOM_PORT 7
+#define FORE_TOP_PORT 7// 6was 7
+#define FORE_BOTTOM_PORT 6// was 6
 
+#define LINE_TRACKER_PORT 1
+#define DRIVE_MOTOR_LEFT 1
+#define DRIVE_MOTOR_RIGHT 2
+
+#include "LineFollow.h"
 #include <API.h>
+#include "chassis.h"
 
 //#include "chassis.h"
 

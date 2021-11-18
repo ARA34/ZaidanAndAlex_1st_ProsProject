@@ -2,5 +2,5 @@
 #define HOMESHOULDER_H
 
 #include "main.h"
-void homeShoulder(int homePosition);
+void homeShoulder(int homePosition, Encoder the_encoder);
 #endif
