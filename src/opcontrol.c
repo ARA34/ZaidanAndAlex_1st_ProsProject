@@ -10,6 +10,9 @@
 #include "main.h"
 #include "claw.h"
 #include "homeshoulder.h"
+#include "home_elbow.h"
+#include "home_elbow.c"
+#include "project6.h"
 //#include "project6.h"
 //#include "chassis.h"
 /*hello this is just a comment... / notes for me
@@ -93,13 +96,13 @@ SHOULDER = 4
        printf("%d \n", i);
      }
    }
-   void lineFollowSet() {
+  /* void lineFollowSet() {
 
      //read the right, left, and center line following sensors
      //print the values of right left and center
     //if c > R & c > L then
     // drive forwards
-    /*
+
     if(c > L && c > R) {
     drive forwards
   } else if(r > c && R > l) {
@@ -109,19 +112,10 @@ drive left
 } else {
 drive back
 }
-    */
-  }
+
+  }*/
 
 
-   void project6(int repetitions, Encoder shoulder_encoder, Encoder elbow_encoder) {
-     printf("project6 starting");
-     for(int count = 0; count > repetitions; count ++) {
-       printf("Count:  %d \n", count);
-
-       liftSet(encoderGet(shoulder_encoder) + count);
-       elbowSet(encoderGet(elbow_encoder) + count);
-     }
-   }
 
 void operatorControl() {
   int power, turn;
@@ -174,10 +168,12 @@ void operatorControl() {
         //holdShoulderAt(50, sEncoder);
         printf("Calling homeshoulder \n");
         homeShoulder(50, sEncoder);
+
         //project6();
       }
-      if(joystickGetDigital(1,8,JOY_LEFT)) {
-        //printf("test \n");
+      if(joystickGetDigital(1,8,JOY_LEFT)){
+      //to home elbow
+        home_Elbow(0, eEncoder);
       }
       if (joystickGetDigital(1,8, JOY_DOWN)) {
         //boolean = 0;
@@ -193,6 +189,7 @@ void operatorControl() {
         printf("Elbow encoder : %d \n", encoderGet(eEncoder));
       }
       if(joystickGetDigital(1,7,JOY_LEFT)) {
+        //line following
         lineFollowSet(the_R, the_L, the_C);
 
       }
@@ -203,7 +200,6 @@ void operatorControl() {
       while(analogReadCalibrated(LINE_TRACKER_PORT) < 2000) {
         motorSet(DRIVE_MOTOR_LEFT, 127);
         motorSet(DRIVE_MOTOR_RIGHT, 127);
-
       }
 
   		delay(200);

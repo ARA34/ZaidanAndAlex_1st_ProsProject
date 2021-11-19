@@ -36,6 +36,8 @@
 #define DRIVE_MOTOR_LEFT 1
 #define DRIVE_MOTOR_RIGHT 2
 
+
+//if main.h is included in h file for a file then cant include it here.
 #include "LineFollow.h"
 #include <API.h>
 #include "chassis.h"
