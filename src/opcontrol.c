@@ -11,7 +11,6 @@
 #include "claw.h"
 #include "homeshoulder.h"
 #include "home_elbow.h"
-#include "home_elbow.c"
 #include "project6.h"
 //#include "project6.h"
 //#include "chassis.h"
@@ -197,10 +196,10 @@ void operatorControl() {
         //printf("Calling homeshoulder its commented out rn tho \n");
       //commenting out for now  homeShoulder(50);
 
-      while(analogReadCalibrated(LINE_TRACKER_PORT) < 2000) {
+      /*while(analogReadCalibrated(LINE_TRACKER_PORT) < 2000) {
         motorSet(DRIVE_MOTOR_LEFT, 127);
         motorSet(DRIVE_MOTOR_RIGHT, 127);
-      }
+      }*/
 
   		delay(200);
 

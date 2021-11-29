@@ -8,9 +8,9 @@ void lineFollowSet(int R, int L, int C) {
   if(C > L && C > R) {
     chassisSet(60, 60);
   } else if(R > L && R > C) {
-    chassisSet(0, 60);
+    chassisSet(-60, 60);
   }else if(L > R && L > C) {
-    chassisSet(60,0);
+    chassisSet(60,-60);
   } else {
     chassisSet(-60, -60);
   }
