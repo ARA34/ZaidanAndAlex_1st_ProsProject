@@ -117,10 +117,12 @@ drive back
 
 
 void operatorControl() {
-  int power, turn;
+  int power, turn, distance;
   int the_R, the_L, the_C;
   Encoder sEncoder;
   Encoder eEncoder;
+  Ultrasonic frontSonar;
+  frontSonar = ultrasonicInit(1,2);
   sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
   eEncoder = encoderInit(FORE_TOP_PORT, FORE_BOTTOM_PORT, true);
 //joystickGetAnalog(unsigned char joystick, unsigned char axis)
@@ -133,6 +135,7 @@ void operatorControl() {
   		power = joystickGetAnalog(1,1); //vertical axis on right joystick
   		turn = joystickGetAnalog(1,2); //horizontal axis on right
       chassisSet(power - turn, power + turn);
+      Ultrasonic frontSonic;
       //printf("the pot value %d \n", pot);
       //chassisSet(power - turn, power + turn);
   		//motorSet(1 {}, power - turn);// right wheels
@@ -191,6 +194,31 @@ void operatorControl() {
         //line following
         lineFollowSet(the_R, the_L, the_C);
 
+      }
+      if( joystickGetDigital(1,7, JOY_RIGHT)) {
+        /*
+        NO WHILE LOOP ONLY WHEN BUTTON IS HELD DOWN
+        Read ultrasonic sensor(once)
+        print value of ultrasonic sensor to terminal
+        if(ultrasonic > targetfollowdist) {
+        drive forward
+      } else if(ultrasonic < targetfollowdist) {
+      drive backwards
+    } else {
+    stop
+  }
+        */
+
+        distance = ultrasonicGet(frontSonar);
+        printf("fronsonar: \n %d", distance);
+
+        if(distance > 20) {
+          chassisSet(50,50);
+        } else if(distance < 16) {
+          chassisSet(-50,-50);
+        } else {
+          chassisSet(0,0);
+        }
       }
         //printf("Encoder value is at: %d \n", encoderGet(sEncoder));
         //printf("Calling homeshoulder its commented out rn tho \n");

@@ -19,7 +19,7 @@
  */
 void initializeIO() {
   //configure the pin that the limit switch is plugged into as an input
-  pinMode(LIMIT_SWITCH,INPUT);
+  //pinMode(LIMIT_SWITCH,INPUT);
 }
 
 /*
@@ -36,5 +36,7 @@ void initializeIO() {
  * can be implemented in this task if desired.
  */
 void initialize() {
-  analogCalibrate(LINE_TRACKER_PORT);
+//  analogCalibrate(LINE_TRACKER_PORT);
+
+//  frontSonar = ultrasonicInit(1, 2);
 }
