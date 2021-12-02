@@ -11,7 +11,7 @@
 #include "claw.h"
 #include "homeshoulder.h"
 #include "home_elbow.h"
-#include "project6.h"
+//#include "project6.h"
 //#include "project6.h"
 //#include "chassis.h"
 /*hello this is just a comment... / notes for me
@@ -181,7 +181,7 @@ void operatorControl() {
         //boolean = 0;
       }
       if (joystickGetDigital(1, 8,JOY_UP)) {
-        project6(5, sEncoder, eEncoder);
+        //project6(5, sEncoder, eEncoder);
       }
 
       if(joystickGetDigital(1,7, JOY_UP)) {
