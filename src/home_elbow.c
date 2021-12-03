@@ -1,23 +1,23 @@
 #include "main.h"
 #include "home_elbow.h"
 #include "chassis.h"
-
+//fixed just switch the physical limit switch around
 
 
 void home_Elbow(int homePosition2, Encoder the_encoder2) {
 
   int eValue2 = encoderGet(the_encoder2);
   //printf("homing started, stand by \n");
-while(digitalRead(LIMIT_SWITCH) == 1)  {
+while(digitalRead(ELBOW_LIMIT_SWITCH) == 1)  {
   //printf("looking for limit switch\n");
-  elbowSet(-50);
+  elbowSet(50);
 }
 elbowSet(0);
 encoderReset(the_encoder2);
 eValue2=encoderGet(the_encoder2);
 
 while(eValue2 < homePosition2) {
-  elbowSet(50);
+  elbowSet(75);
   //printf("moving to home pos %d \n",eValue );
   if (eValue2 < homePosition2) {
     elbowSet(0);

@@ -25,6 +25,7 @@
 #define MAIN_H_
 //digital port number limit switched is plugged into
 #define LIMIT_SWITCH 4
+#define ELBOW_LIMIT_SWITCH 3
 
 #define QUAD_TOP_PORT 8 //port number
 #define QUAD_BOTTOM_PORT 9 //port number

@@ -20,13 +20,38 @@
     elbowSet(encoderGet(elbow_encoder) + count);
   }
 }*/
-int point_1, point_2;
 
-long calculatePoints(int x, int y) {
+/* psuedocode:::::::
+
+int L1;
+int L2;
+//setup for robot line
+homeShoulder(setpos)
+homeElbow(setpos)
+
+//begin going in line.
 
 
-  return y;
-  return x;
+liftSet and elbowSet
+
+7.5 inches
+
+int count = 0;
+for (count > 10) {
+    
+
+
+}
+
+
+
+*/
+
+
+
+
+long calculatePoints() {
+
 }
 
 void robotLine() {

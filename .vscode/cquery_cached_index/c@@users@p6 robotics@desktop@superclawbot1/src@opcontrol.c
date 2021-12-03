@@ -124,7 +124,7 @@ void operatorControl() {
   Ultrasonic frontSonar;
   frontSonar = ultrasonicInit(1,2);
   sEncoder = encoderInit(QUAD_TOP_PORT, QUAD_BOTTOM_PORT, true);
-  eEncoder = encoderInit(FORE_TOP_PORT, FORE_BOTTOM_PORT, true);
+  eEncoder = encoderInit(FORE_TOP_PORT, FORE_BOTTOM_PORT, false);
 //joystickGetAnalog(unsigned char joystick, unsigned char axis)
   //printf("before the while loop in opcontrol \n");
   while(1) {
@@ -169,13 +169,13 @@ void operatorControl() {
         //printf("calling holdShoulderAt \n");
         //holdShoulderAt(50, sEncoder);
         printf("Calling homeshoulder \n");
-        homeShoulder(50, sEncoder);
+        homeShoulder(225, sEncoder);
 
         //project6();
       }
       if(joystickGetDigital(1,8,JOY_LEFT)){
       //to home elbow
-        home_Elbow(0, eEncoder);
+        home_Elbow(100, eEncoder);
       }
       if (joystickGetDigital(1,8, JOY_DOWN)) {
         //boolean = 0;
@@ -192,7 +192,7 @@ void operatorControl() {
       }
       if(joystickGetDigital(1,7,JOY_LEFT)) {
         //line following
-        lineFollowSet(the_R, the_L, the_C);
+        //lineFollowSet(the_R, the_L, the_C);
 
       }
       if( joystickGetDigital(1,7, JOY_RIGHT)) {

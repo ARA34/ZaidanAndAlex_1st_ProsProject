@@ -17,7 +17,7 @@ encoderReset(the_encoder);
 eValue=encoderGet(the_encoder);
 
 while(eValue < homePosition) {
-  liftSet(50);
+  liftSet(100);
   //printf("moving to home pos %d \n",eValue );
   if (eValue < homePosition) {
     liftSet(0);
